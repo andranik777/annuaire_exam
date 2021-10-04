@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All_users{% endblock %}
+
+{% block body %}
+
+    <div class="container d-flex flex-wrap justify-content-center mt-3">
+        {% for user in users %}
+            <div class="card ms-3" style="width: 18rem;">
+                <img src="uploads/{{user.photo}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.nom }}  {{ user.prenom }}</h5>
+                    <p class="card-text">Email: {{ user.email }}</p>
+                    <p class="card-text">Secteur: {{ user.secteur }}</p>
+                    <p class="card-text">Type de contrat: {{ user.typeContrat }}</p>
+                    <a href="{{ path('user_all_show', {'id': user.id}) }}" class="btn btn-primary">Contacter</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+

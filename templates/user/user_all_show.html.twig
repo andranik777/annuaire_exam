@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail utilisateur{% endblock %}
+
+{% block body %}
+    <h1>INFORMATION DE CONTACT</h1>
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Nom</th>
+            <td>{{ user.nom }}</td>
+            <th>Prenom</th>
+            <td>{{ user.prenom }}</td>
+            <th>Secteur</th>
+            <td>{{ user.secteur }}</td>
+            <th>Type de contrat</th>
+            <td>{{ user.typeContrat }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_all') }}">Revenir en arriere</a>
+
+{% endblock %}
